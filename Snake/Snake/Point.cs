@@ -8,10 +8,12 @@ namespace Snake
 {
     class Point
     {
+        //данные
         public int x;
         public int y;
         public char sym;
 
+        //конструктор
         public Point()
         {
 
@@ -24,6 +26,7 @@ namespace Snake
             sym = _sym;
         }
 
+        //метод
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
