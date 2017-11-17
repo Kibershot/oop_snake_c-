@@ -11,17 +11,36 @@ namespace Snake
         static void Main(string[] args)
         {
 
-            Point p1 = new Point(1,3,'*');
+            int x = 1;
+            Func1(x);
+            Console.WriteLine("Call Func1. x = " + x);
 
-            p1.Draw();
+            x = 1;
+            Func2(x);
+            Console.WriteLine("Call Func2. x = " + x);
+
+            Point p1 = new Point(1, 3, '*');
 
             Point p2 = new Point(4, 5, '#');
-
-            p2.Draw();
+            p1 = p2;
+            p2.x = 8;
+            p2.y = 8;
+            Console.WriteLine("p1=p2. p1.x =" + p1.x + ",p1.y=" + p1.y + "p2.x=" + p2.x + "p2.y=" + p2.y);
 
             Console.ReadLine();
+
         }
 
-       
+        public static void Func1(int x)
+        {
+
+        }
+        public static void Func2(int x)
+        {
+            x = x + 1;
+        }
+        
+
+
     }
 }
