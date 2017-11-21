@@ -8,7 +8,7 @@ namespace Snake
 {
     class Snake : Figure
     {
-        Direction direction;
+        /*public*/ Direction direction; // убрали паблик так как управление с клавишь перенесли в этот же класс
 
         public Snake ( Point tail, int lenght, Direction _direction)
         {
@@ -38,6 +38,18 @@ namespace Snake
             Point nextPoint = new Point(head); // новая точка копия предыдущего положения головы
             nextPoint.Move(1, direction); // сдвигаем по направлению дирекшен
             return nextPoint;
+        }
+
+        public void HandleKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)
+                direction = Direction.LEFT; // чтобы снейкюдирекшн был доступен в классе нужно дирекшн сделать пабликом
+            else if (key == ConsoleKey.RightArrow)
+                direction = Direction.RIGHT;
+            else if (key == ConsoleKey.DownArrow)
+                direction = Direction.DOWN;
+            else if (key == ConsoleKey.UpArrow)
+                direction = Direction.UP;
         }
     }
 }
